@@ -13,6 +13,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Unshallow the repo for Heroku push
+      run: git fetch --unshallow
+
+
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
