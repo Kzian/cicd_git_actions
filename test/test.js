@@ -1,5 +1,6 @@
 const request = require('supertest');
 const app = require('../index'); // make sure index.js exports the app
+const assert = require('assert');
 
 describe('GET /', () => {
   it('should return Hello World!', async () => {
