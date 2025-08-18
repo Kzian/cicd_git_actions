@@ -20,22 +20,20 @@ jobs:
     - name: Unshallow the repo for Heroku push
       run: git fetch --unshallow
 
-
-    - name: Set up Node.js
+    - name: Set up Node.js 20
       uses: actions/setup-node@v3
       with:
         node-version: '20'
 
+    - name: Verify Node.js version
+      run: node -v   # <-- should print v20.x
+
     - name: Install dependencies
       run: npm install
-
-    - name: Fix mocha permissions
-      run: chmod +x ./node_modules/.bin/mocha
 
     - name: Run tests
       run: npm test
 
-      
     - name: Deploy to Heroku
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
