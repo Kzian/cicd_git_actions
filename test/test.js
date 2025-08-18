@@ -9,3 +9,13 @@ describe('GET /', () => {
     if (res.text !== 'Hello World!') throw new Error('Unexpected response body');
   });
 });
+
+
+// NEW: health check test
+describe('GET /health', () => {
+  it('should return ok status', async () => {
+    const res = await request(app).get('/health');
+    assert.strictEqual(res.statusCode, 200);
+    assert.deepStrictEqual(res.body, { status: 'ok' });
+  });
+});

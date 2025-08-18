@@ -6,6 +6,12 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+
+// NEW: health endpoint
+app.get('/health', (_req, res) => {
+  res.json({ status: 'ok' });
+});
+
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
