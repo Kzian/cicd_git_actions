@@ -12,6 +12,10 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok' });
 });
 
+app.get('/time', (_req, res) => {
+  res.json({ now: new Date().toISOString() });
+});
+
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);

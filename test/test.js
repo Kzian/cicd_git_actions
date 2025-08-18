@@ -19,3 +19,11 @@ describe('GET /health', () => {
     assert.deepStrictEqual(res.body, { status: 'ok' });
   });
 });
+
+describe('GET /time', () => {
+  it('should return current time', async () => {
+    const res = await request(app).get('/time');
+    assert.strictEqual(res.statusCode, 200);
+    assert.ok(res.body.now); // should exist
+  });
+});
