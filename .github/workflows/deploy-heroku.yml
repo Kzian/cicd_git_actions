@@ -24,9 +24,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20'
+        check-latest: true   # <--- ensures the latest 20.x is used
 
     - name: Verify Node.js version
-      run: node -v   # <-- should print v20.x
+      run: |
+        which node
+        node -v
+        npm -v
 
     - name: Install dependencies
       run: npm install
