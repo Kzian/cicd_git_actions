@@ -1,7 +1,3 @@
-Absolutely! Here’s a professional and clear **README draft** for your repository `cicd_git_actions`, tailored to a Node.js app with GitHub Actions CI/CD and Heroku deployment:
-
----
-
 # CICD Git Actions
 
 A sample Node.js application demonstrating **Continuous Integration and Continuous Deployment (CI/CD)** using **GitHub Actions** and deployment to **Heroku**.
