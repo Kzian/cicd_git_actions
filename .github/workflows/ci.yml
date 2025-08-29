@@ -60,5 +60,5 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
-          git remote add heroku https://git.heroku.com/cicd-demo-app.git
+          git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/cicd-demo-app.git
           git push heroku main --force
