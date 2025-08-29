@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
+        node-version: [16.x, 18.x, 20.x]
 
     steps:
       - name: Checkout Repository
@@ -27,6 +27,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      # Lint only on Node 20
       - name: Run Linter
         if: matrix.node-version == '20.x'
         run: npx eslint .
@@ -34,6 +35,7 @@ jobs:
       - name: Run Tests
         run: npm test
 
+    # Allow 16 & 18 to fail without blocking, but not 20
     continue-on-error: ${{ matrix.node-version != '20.x' }}
 
   deploy:
