@@ -1,3 +1,6 @@
+![CI/CD Pipeline](https://github.com/Kzian/cicd_git_actions/actions/workflows/ci.yml/badge.svg)
+
+
 # CICD Git Actions
 
 A sample Node.js application demonstrating **Continuous Integration and Continuous Deployment (CI/CD)** using **GitHub Actions** and deployment to **Heroku**.
@@ -125,5 +128,42 @@ heroku logs --tail
 ```
 
 ---
+
+
+Got it ✅ — here’s a **clean summary you can append to your README.md** so your submission clearly shows what your CI/CD pipeline does and which Node versions it runs against.
+
+---
+
+## 🚀 CI/CD Pipeline Summary
+
+This project uses **GitHub Actions** for Continuous Integration (CI) and Continuous Deployment (CD) and was appended to the CICD Git actions repo.
+
+### ✅ CI Features
+
+* **Matrix builds**: Runs tests across multiple Node.js versions:
+
+  * **16.x**
+  * **18.x**
+  * **20.x** (primary runtime, must pass)
+* **Caching**: Speeds up dependency installs with GitHub Actions cache.
+* **Linting**: Enforces code quality using **ESLint** (runs on Node 20).
+* **Automated Testing**: Executes unit tests with **Mocha** on every push and pull request.
+
+### 🚀 CD Features
+
+* **Deployment to Heroku**:
+
+  * Triggered only when pushing to the `main` branch.
+  * Deploys the application using **Heroku API Key** stored in GitHub Secrets.
+  * Uses Node.js **20.x** as the production runtime.
+
+### 📊 Workflow Overview
+
+1. Code pushed → GitHub Actions triggers the workflow.
+2. Pipeline runs linting (Node 20 only) + tests (Node 16, 18, 20).
+3. If Node 20 passes → code is deployed to **Heroku**.
+
+---
+
 
 
