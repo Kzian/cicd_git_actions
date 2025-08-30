@@ -129,10 +129,7 @@ heroku logs --tail
 
 ---
 
-
-Got it ✅ — here’s a **clean summary you can append to your README.md** so your submission clearly shows what your CI/CD pipeline does and which Node versions it runs against.
-
----
+## 29/08/25
 
 ## 🚀 CI/CD Pipeline Summary
 
